@@ -1,0 +1,26 @@
+Data period: 1.1.2014-31.12.2016
+Time resolution: hourly
+Two stations: Helsinki Kaisaniemi (LPNN:304) and Helsinki Kumpula (LPNN: 339)
+Missing value: NA
+Variables and [units]
+- LPNN: code of the station
+- YEAR
+- MONTH
+- DAY
+- HOUR: hours:minutes
+- DATE_TIME: dd.mm.yyyy hours:minutes
+- P_SEA_AVG: mean air pressure at sea level during the previous hour [hPa]
+- RH_AVG: mean relative humidity during the previous hour [%]
+- T_AVG: mean temperature during the previous hour [C]
+- T_MIN: min temperature during the previous hour [C]
+- T_MAX: max temperature during the previous hour [C]
+- WD_AVG: average wind direction during the previous hour [deg 1-360, no wind = 0]
+- WG_MAX: max 3 seconds gust wind speed during the previous hour [m/s]
+- WS_AVG: mean wind speed during the previous hour [m/s]
+- WS_MAX: max 10 minutes wind speed during the previous hour [m/s]
+- SUN_DUR_U: Sunshine duration during the previous hour [h]
+- RI_MAX: max intensity of precipitation during the previous hour [mm/h]
+- R_1H: precipitation sum during the previous hour [mm, no rain = -1]
+- WD_AVG_DIR: WD_AVG divided to 8 sectors (N, NE, E, SE, S, SW, W, NW) 
+
+
