@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>Data Science</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/heatmap.js/2.0.2/heatmap.min.js" crossorigin="anonymous" integrity="sha384-cO1k/fb6OUMV7kC/uKtdZMy1oJXiNtKS/yDst4gZ5K6RVCmNzfxAfiQBIflJc39G"></script>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <p>
+        Our goal has been to create a program to predict the amount of bicyclist you are likely to meet, when going out. To achieve
+        this we have used <a href="http://www.hri.fi/fi/dataset/helsingin-pyorailijamaarat">data from the city of Helsinki</a>,
+        which tells us the amount of bycyclists on a given location. We have combined this information with
+        <a href="https://ilmatieteenlaitos.fi/avoin-data">weather data from Finnish Meteorological Institute</a>.
+    </p>
+
+    <p>
+        We wanted to see how much does weather and date affect the amount of bicyclists. We used linear regression, as was suggested
+        in the project instructions. Some of the data showed clear linear connection, but for some it was less clear. It
+        is possible that some of the data have more complex relationship, and a regression tree, for example, could have
+        predicted better.
+    </p>
+
+    <figure>
+        <img src="images/total_rainfall.png" alt="Rainfall">
+        <figcaption>Rain seems to have little effect</figcaption>
+    </figure>
+    <figure>
+        <img src="images/total_temperature.png" alt="Temperature">
+        <figcaption>Temperature seems to have no effect, until after 0 degree celcius. For example, this could be a good point for a
+            regression tree branch</figcaption>
+    </figure>
+    <figure>
+        <img src="images/total_wind_direction.png" alt="Wind Direction">
+        <figcaption>No noticable effect from wind direction</figcaption>
+    </figure>
+    <figure>
+        <img src="images/total_wind_speed.png" alt="Wind Speed">
+        <figcaption>The spike could be most likely that during afternoon wind is strongest.</figcaption>
+    </figure>
+    <figure>
+        <img src="images/2016_daily_amount_of_cyclists_facet.png" style="width: 35%; height: 35%" alt="Daily cyclists">
+        <figcaption>The seasonal effect is strong</figcaption>
+    </figure>
+    <figure>
+        <img src="images/june_2016_hourly_amount_of_cyclists_facet.png" style="width: 35%; height: 35%" alt="Daily cyclists">
+        <figcaption>The Most noticable seasonal effect seems to be the Midsummer, which could also be a good branch for a regression
+            tree.
+        </figcaption>
+    </figure>
+    <figure>
+        <img src="images/mod_loess.png" style="width: 35%; height: 35%" alt="Daily cyclists">
+        <figcaption>Prediction using temperature, wind, and rain.</figcaption>
+    </figure>
+    <figure>
+        <img src="images/mod_loess2.png" style="width: 35%; height: 35%" alt="Daily cyclists">
+        <figcaption>Prediction using temperature, wind, rain and week day.</figcaption>
+    </figure>
+    <figure>
+        <img src="images/mod_loess3.png" style="width: 35%; height: 35%" alt="Daily cyclists">
+        <figcaption>Prediction using temperature, wind, month and week day.</figcaption>
+    </figure>
+    <p>
+        Our best estimator was using Local Polynomial Regression, which was somewhat accurate. However our estimators were unable
+        to explain all the variation in the data. We also had problems fetching realtime data from the FMI servers, and implementing
+        the algorithm in the browser. For that we were unable to complete our realtime predictor for bicyclists. The rest
+        of our codes are in
+        <a href="https://github.com/tmakij/IntrToDataSci">github</a>.
+    </p>
+    <!--
+    <form id="cform">
+        <button type="submit">Laske</button>
+    </form>
+    <div style="background: no-repeat url(images/helsinki.png);" id="mapcontainer">
+        <img style="vertical-align: top;width: 100%; opacity: 0;" src="images/helsinki.png" alt="Helsinki" id="mapcontainer">
+    </div>
+-->
+</body>
+
+</html>
